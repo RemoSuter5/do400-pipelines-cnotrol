@@ -12,13 +12,13 @@ pipeline {
             parallel {
                 stage('Backend Tests') {
                     steps {
-                        sh 'node home/student/DO400/do400-pipelines-control/backend/test.js'
+                        sh 'node /home/student/DO400/do400-pipelines-control/simple-webapp/backend/test.js'
                     }
                 }
                 stage('Frontend Tests') {
                     when { expression { params.RUN_FRONTEND_TESTS } }
                     steps {
-                        sh 'node /home/student/DO400/do400-pipelines-control/frontend/test.js'
+                        sh 'node /home/student/DO400/do400-pipelines-control/simple-webapp/frontend/test.js'
                     }
                 }
             }
